@@ -1,40 +1,102 @@
-.menuBar {
-  height: 10rem;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  position: relative;
+.homeLayout {
+  font-family: "DM Serif Display", serif;
 }
 
-.logo {
-  margin: 2rem;
-  height: 10rem;
+.notificationBar {
+  background-color: yellow;
+  text-align: center;
 }
 
-.btns {
-  position: absolute;
-  right: 0;
-  float: right;
-  margin: 2rem;
+.notificationLink {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-bottom: 3px solid #000;
 }
 
-.menuItem {
-  font-size: 3rem;
-  background-color: black;
-  margin: 2rem;
-}
-
-.poster {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(#777, 0.8),
-      rgba(#999, 0.8)
-    ),
-    url(../public/Theo.jpg);
+.headerBox {
+  height: 80rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url("../public/Theo.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.mainTitle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.mainTitleText {
+  text-align: center;
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  text-shadow: 2px 2px #000;
+}
+
+.mainTitleText span {
+  display: block;
+}
+
+.mainTitleText span:nth-child(2) {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.navigationMenuItems li {
+  display: inline;
+  font-size: large;
+  margin: 0 2rem;
+}
+
+.navigationMenuItems a {
+  text-decoration: none;
+  color: #cfd7db;
 }
